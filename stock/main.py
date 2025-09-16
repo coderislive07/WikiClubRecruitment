@@ -1,1 +1,23 @@
+Product = tuple[str, float | str, int]
 
+def process_stock(product_list: list[Product]) -> tuple[float, set[str]]:
+
+    total_value: float = 0.0
+    out_of_stock_items: list[str] = list()
+
+    for pid, price, stock in product_list:
+        try:
+            numeric_price = float(price)  # Convert price to float
+        except (TypeError, ValueError):
+            numeric_price = 0.0
+            out_of_stock_items.append(pid)  # Mark invalid price as out of stock
+
+        if not isinstance(stock, int) or stock < 0:
+            stock = 0  # Normalize invalid stock
+
+        total_value += numeric_price * stock  # Add to total stock value
+
+        if stock == 0:
+            out_of_stock_items.append(pid)  # Add out-of-stock items
+
+    return total_value, out_of_stock_items
