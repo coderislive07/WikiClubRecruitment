@@ -1,13 +1,28 @@
-# WikiClubRecruitment
+# WikiClubRecruitment - Stock Processing Module
 
-Solve the latest problem and create a pull request.
+Python module for processing product stock data. Calculates total stock value and identifies out-of-stock or invalid products.
 
-## Tasks
+---
 
-- Fix the bug in "main.py".
-- Make it use the python's type hinting feature.
-- Place it in a valid module named stock.
-- Add an appropriate .gitignore file.
-- Write 5 test cases minimum.
-- Make a well formatted professional pull request.
-- Well documented code.
+## Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone <repository-url>
+cd WikiClubRecruitment
+```
+Install Dependencies (only for testing)
+```bash
+pip install pytest
+```
+Running Tests
+
+* Run tests from the project root:
+```bash
+python -m pytest
+```
+## Test Output
+
+![Running Tests](test_screenshot.png "Test Output")
+
